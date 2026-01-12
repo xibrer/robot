@@ -9,3 +9,7 @@ dependencies = [
     "PyQt5>=5.15.9",
     "pyqt5-tools>=5.15.9.3.3",
 ]
+
+[[tool.uv.index]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
