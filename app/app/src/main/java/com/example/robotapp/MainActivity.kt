@@ -50,8 +50,8 @@ class MainActivity : ComponentActivity() {
 }
 
 enum class CameraType {
-    CAM_HIGH,      // 俯视摄像头 (camera_id = 0)
-    CAM_LEFT_WRIST // 左视摄像头 (camera_id = 1)
+    CAM_HIGH,      // 主视图摄像头 (camera_id = 0)
+    CAM_LEFT_WRIST // 左视图摄像头 (camera_id = 1)
 }
 
 @OptIn(ExperimentalPermissionsApi::class)
@@ -162,7 +162,7 @@ fun CameraStreamScreen() {
                     FilterChip(
                         selected = selectedCameraType == CameraType.CAM_HIGH,
                         onClick = { if (!isConnected) selectedCameraType = CameraType.CAM_HIGH },
-                        label = { Text("俯视 (High)") },
+                        label = { Text("主视图") },
                         enabled = !isConnected,
                         modifier = Modifier.weight(1f)
                     )

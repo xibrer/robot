@@ -175,7 +175,7 @@ class DataCollectionApp(QMainWindow):
         camera_layout.setSpacing(10)
         camera_layout.setContentsMargins(10, 10, 10, 10)
         
-        left_camera = self.create_camera_view("俯视图")
+        left_camera = self.create_camera_view("主视图")
         camera_layout.addWidget(left_camera, 1)
         
         right_camera = self.create_camera_view("左视图")
@@ -209,7 +209,7 @@ class DataCollectionApp(QMainWindow):
         overlay_label.setText("")
         overlay_layout.addWidget(overlay_label)
         
-        if description == "俯视图":
+        if description == "主视图":
             self.cam_high_label = video_label
             self.cam_high_overlay = overlay_label
         else:
@@ -453,6 +453,10 @@ class DataCollectionApp(QMainWindow):
             self.tcp_server.stop()
             self.tcp_server.wait()
         if self.robot_thread:
+
+
+
+            
             self.robot_thread.stop()
         for thread in self.camera_threads.values():
             if thread.isRunning():
